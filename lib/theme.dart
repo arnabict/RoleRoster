@@ -10,3 +10,39 @@ class AppColors {
   static Color successColor = Color.fromRGBO(9, 149, 110, 1);
   static Color highlightColor = Color.fromRGBO(212, 172, 13, 1);
 }
+
+ThemeData primaryTheme = ThemeData(
+  // seed color
+  colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+
+  // scaffold color
+  scaffoldBackgroundColor: AppColors.secondaryAccent,
+
+  // app bar theme colors
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppColors.secondaryColor,
+    foregroundColor: AppColors.textColor,
+    surfaceTintColor: Colors.transparent,
+    centerTitle: true,
+  ),
+
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+      color: AppColors.textColor,
+      fontSize: 16,
+      letterSpacing: 1,
+    ),
+    headlineMedium: TextStyle(
+      color: AppColors.titleColor,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1,
+    ),
+    titleMedium: TextStyle(
+      color: AppColors.titleColor,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 2,
+    ),
+  ),
+);
