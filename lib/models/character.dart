@@ -1,8 +1,15 @@
 import 'package:model_rpg/models/stats.dart';
+import 'package:model_rpg/models/vocation.dart';
 
 class Character with Stats {
-  Character({required this.name, required this.slogan, required this.id});
+  Character({
+    required this.vocation,
+    required this.name,
+    required this.slogan,
+    required this.id,
+  });
 
+  final Vocation vocation;
   final String name;
   final String slogan;
   final String id;
