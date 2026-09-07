@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:model_rpg/shared/styled_text.dart';
 import 'package:model_rpg/theme.dart';
+import "package:google_fonts/google_fonts.dart";
 
 class Create extends StatefulWidget {
   const Create({super.key});
@@ -27,6 +28,28 @@ class _CreateState extends State<Create> {
               child: StyledText("Create a name & slogan for your character."),
             ),
             SizedBox(height: 30),
+
+            TextField(
+              style: GoogleFonts.kanit(
+                textStyle: Theme.of(context).textTheme.bodyMedium,
+              ),
+              cursorColor: AppColors.textColor,
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.person_2),
+                label: StyledText("Character name"),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              style: GoogleFonts.kanit(
+                textStyle: Theme.of(context).textTheme.bodyMedium,
+              ),
+              cursorColor: AppColors.textColor,
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.chat),
+                label: StyledText("Character slogan"),
+              ),
+            ),
           ],
         ),
       ),

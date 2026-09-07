@@ -46,12 +46,19 @@ ThemeData primaryTheme = ThemeData(
     ),
   ),
 
-  // card theme
   cardTheme: CardThemeData(
     color: AppColors.secondaryColor.withValues(alpha: 0.5),
     surfaceTintColor: Colors.transparent,
     shape: RoundedRectangleBorder(),
     shadowColor: Colors.transparent,
     margin: EdgeInsets.only(bottom: 16),
+  ),
+
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    fillColor: AppColors.secondaryColor.withValues(alpha: 0.5),
+    border: InputBorder.none,
+    labelStyle: TextStyle(color: AppColors.textColor),
+    prefixIconColor: AppColors.textColor,
   ),
 );
