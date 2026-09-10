@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:model_rpg/models/vocation.dart';
+import 'package:model_rpg/screens/create/vocation_card.dart';
 import 'package:model_rpg/shared/styled_button.dart';
 import 'package:model_rpg/shared/styled_text.dart';
 import 'package:model_rpg/theme.dart';
@@ -51,6 +53,7 @@ class _CreateState extends State<Create> {
             Center(
               child: StyledText("Create a name & slogan for your character."),
             ),
+
             SizedBox(height: 30),
 
             TextField(
@@ -78,6 +81,16 @@ class _CreateState extends State<Create> {
                 label: StyledText("Character slogan"),
               ),
             ),
+
+            SizedBox(height: 30),
+
+            Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
+            Center(child: StyledHeading("Choose a vocation.")),
+            Center(child: StyledText("This determines your available skills.")),
+            VocationCard(vocation: Vocation.junkie),
+            VocationCard(vocation: Vocation.ninja),
+            VocationCard(vocation: Vocation.raider),
+            VocationCard(vocation: Vocation.wizard),
 
             SizedBox(height: 30),
 
