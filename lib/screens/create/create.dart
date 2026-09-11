@@ -46,61 +46,65 @@ class _CreateState extends State<Create> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-        child: Column(
-          children: [
-            Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
-            Center(child: StyledHeading("Welcome, new player.")),
-            Center(
-              child: StyledText("Create a name & slogan for your character."),
-            ),
-
-            SizedBox(height: 30),
-
-            TextField(
-              controller: _nameController,
-              style: GoogleFonts.kanit(
-                textStyle: Theme.of(context).textTheme.bodyMedium,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
+              Center(child: StyledHeading("Welcome, new player.")),
+              Center(
+                child: StyledText("Create a name & slogan for your character."),
               ),
-              cursorColor: AppColors.textColor,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.person_2),
-                label: StyledText("Character name"),
+
+              SizedBox(height: 30),
+
+              TextField(
+                controller: _nameController,
+                style: GoogleFonts.kanit(
+                  textStyle: Theme.of(context).textTheme.bodyMedium,
+                ),
+                cursorColor: AppColors.textColor,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.person_2),
+                  label: StyledText("Character name"),
+                ),
               ),
-            ),
 
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            TextField(
-              controller: _sloganController,
-              style: GoogleFonts.kanit(
-                textStyle: Theme.of(context).textTheme.bodyMedium,
+              TextField(
+                controller: _sloganController,
+                style: GoogleFonts.kanit(
+                  textStyle: Theme.of(context).textTheme.bodyMedium,
+                ),
+                cursorColor: AppColors.textColor,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.chat),
+                  label: StyledText("Character slogan"),
+                ),
               ),
-              cursorColor: AppColors.textColor,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.chat),
-                label: StyledText("Character slogan"),
+
+              SizedBox(height: 30),
+
+              Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
+              Center(child: StyledHeading("Choose a vocation.")),
+              Center(
+                child: StyledText("This determines your available skills."),
               ),
-            ),
+              VocationCard(vocation: Vocation.junkie),
+              VocationCard(vocation: Vocation.ninja),
+              VocationCard(vocation: Vocation.raider),
+              VocationCard(vocation: Vocation.wizard),
 
-            SizedBox(height: 30),
+              SizedBox(height: 30),
 
-            Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
-            Center(child: StyledHeading("Choose a vocation.")),
-            Center(child: StyledText("This determines your available skills.")),
-            VocationCard(vocation: Vocation.junkie),
-            VocationCard(vocation: Vocation.ninja),
-            VocationCard(vocation: Vocation.raider),
-            VocationCard(vocation: Vocation.wizard),
-
-            SizedBox(height: 30),
-
-            Center(
-              child: StyledButton(
-                onPressed: handleSubmit,
-                child: StyledHeading("Create Character"),
+              Center(
+                child: StyledButton(
+                  onPressed: handleSubmit,
+                  child: StyledHeading("Create Character"),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
