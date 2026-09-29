@@ -39,9 +39,47 @@ class _CreateState extends State<Create> {
 
   void handleSubmit() {
     if (_nameController.text.trim().isEmpty) {
+      showDialog(
+        context: context,
+        builder: (ctx) {
+          return AlertDialog(
+            title: StyledHeading("Missing Character Name"),
+            content: StyledText(
+              "Every good RPG character needs a great name...",
+            ),
+            actions: [
+              StyledButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                },
+                child: StyledHeading("Close"),
+              ),
+            ],
+            actionsAlignment: MainAxisAlignment.center,
+          );
+        },
+      );
       return;
     }
     if (_sloganController.text.trim().isEmpty) {
+      showDialog(
+        context: context,
+        builder: (ctx) {
+          return AlertDialog(
+            title: StyledHeading("Missing Slogan Name"),
+            content: StyledText("Remember to add a catchy slogan..."),
+            actions: [
+              StyledButton(
+                onPressed: () {
+                  Navigator.pop(ctx);
+                },
+                child: StyledHeading("Close"),
+              ),
+            ],
+            actionsAlignment: MainAxisAlignment.center,
+          );
+        },
+      );
       return;
     }
     characters.add(
