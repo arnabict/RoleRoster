@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:model_rpg/models/character.dart';
 import 'package:model_rpg/models/vocation.dart';
 import 'package:model_rpg/screens/create/vocation_card.dart';
+import 'package:model_rpg/screens/home/home.dart';
 import 'package:model_rpg/shared/styled_button.dart';
 import 'package:model_rpg/shared/styled_text.dart';
 import 'package:model_rpg/theme.dart';
@@ -51,6 +52,7 @@ class _CreateState extends State<Create> {
         id: uuid.v4(),
       ),
     );
+    Navigator.push(context, MaterialPageRoute(builder: (ctx) => Home()));
   }
 
   @override
