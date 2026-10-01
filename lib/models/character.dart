@@ -8,6 +8,8 @@ class Character with Stats {
     required this.name,
     required this.slogan,
     required this.id,
+    required this.weapon,
+    required this.ability,
   });
 
   final Set<Skill> skills = {};
@@ -15,6 +17,8 @@ class Character with Stats {
   final String name;
   final String slogan;
   final String id;
+  final String weapon;
+  final String ability;
   bool _isFav = false;
 
   bool get isFav => _isFav;
@@ -37,23 +41,31 @@ List<Character> characters = [
     name: "Klara",
     slogan: "Razer Sharp!",
     id: "1",
+    weapon: "Sword",
+    ability: "Tornado",
   ),
   Character(
     vocation: Vocation.junkie,
     name: "Jonny",
     slogan: "Wind Blaze!",
     id: "2",
+    weapon: "Sword",
+    ability: "Tornado",
   ),
   Character(
     vocation: Vocation.raider,
     name: "Maya",
     slogan: "Rivoroid!",
     id: "3",
+    weapon: "Sword",
+    ability: "Tornado",
   ),
   Character(
     vocation: Vocation.ninja,
     name: "Alan",
     slogan: "Exempria!",
     id: "4",
+    weapon: "Sword",
+    ability: "Tornado",
   ),
 ];

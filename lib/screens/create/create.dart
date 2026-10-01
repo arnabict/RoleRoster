@@ -88,6 +88,8 @@ class _CreateState extends State<Create> {
         name: _nameController.text.trim(),
         slogan: _sloganController.text.trim(),
         id: uuid.v4(),
+        weapon: "Sword",
+        ability: "Tornado",
       ),
     );
     Navigator.push(context, MaterialPageRoute(builder: (ctx) => Home()));
