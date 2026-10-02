@@ -37,6 +37,55 @@ class _StatsTableState extends State<StatsTable> {
               ],
             ),
           ),
+          Table(
+            children: widget.character.statsAsFormattedList.map((stat) {
+              return TableRow(
+                decoration: BoxDecoration(
+                  color: AppColors.secondaryColor.withValues(alpha: 0.5),
+                ),
+                children: [
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: StyledHeading(stat["title"]!),
+                    ),
+                  ),
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: StyledHeading(stat["value"]!),
+                    ),
+                  ),
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          widget.character.increaseStat(stat["title"]!);
+                        });
+                      },
+                      icon: Icon(Icons.arrow_upward),
+                      color: AppColors.textColor,
+                    ),
+                  ),
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          widget.character.decreaseStat(stat["title"]!);
+                        });
+                      },
+                      icon: Icon(Icons.arrow_downward),
+                      color: AppColors.textColor,
+                    ),
+                  ),
+                ],
+              );
+            }).toList(),
+          ),
         ],
       ),
     );
