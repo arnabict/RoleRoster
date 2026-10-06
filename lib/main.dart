@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:model_rpg/screens/home/home.dart';
+import 'package:model_rpg/services/character_store.dart';
 import 'package:model_rpg/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MaterialApp(theme: primaryTheme, home: Home()));
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CharacterStore(),
+      child: MaterialApp(theme: primaryTheme, home: Home()),
+    ),
+  );
 }
 
 class SandBox extends StatelessWidget {
