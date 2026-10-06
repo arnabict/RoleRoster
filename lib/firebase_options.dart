@@ -56,7 +56,6 @@ class DefaultFirebaseOptions {
     projectId: 'model-rpg',
     storageBucket: 'model-rpg.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAdXFG0MrnmxIFxZ2J_Afb4xpvjSLdKkK8',
     appId: '1:456860361561:ios:cefd39f67e9e989d6b6248',
