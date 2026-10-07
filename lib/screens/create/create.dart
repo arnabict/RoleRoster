@@ -91,8 +91,8 @@ class _CreateScreenState extends State<CreateScreen> {
         name: _nameController.text.trim(),
         slogan: _sloganController.text.trim(),
         id: uuid.v4(),
-        weapon: "Sword",
-        ability: "Tornado",
+        // weapon: "Sword",
+        // ability: "Tornado",
       ),
     );
 
