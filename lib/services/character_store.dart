@@ -1,43 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:model_rpg/models/character.dart';
-import 'package:model_rpg/models/vocation.dart';
 import 'package:model_rpg/services/firestore_service.dart';
 
 class CharacterStore extends ChangeNotifier {
-  final List<Character> _characters = [
-    Character(
-      vocation: Vocation.wizard,
-      name: "Klara",
-      slogan: "Razer Sharp!",
-      id: "1",
-      // weapon: "Sword",
-      // ability: "Tornado",
-    ),
-    Character(
-      vocation: Vocation.junkie,
-      name: "Jonny",
-      slogan: "Wind Blaze!",
-      id: "2",
-      // weapon: "Sword",
-      // ability: "Tornado",
-    ),
-    Character(
-      vocation: Vocation.raider,
-      name: "Maya",
-      slogan: "Rivoroid!",
-      id: "3",
-      // weapon: "Sword",
-      // ability: "Tornado",
-    ),
-    Character(
-      vocation: Vocation.ninja,
-      name: "Alan",
-      slogan: "Exempria!",
-      id: "4",
-      // weapon: "Sword",
-      // ability: "Tornado",
-    ),
-  ];
+  final List<Character> _characters = [];
 
   List<Character> get characters => _characters;
 
@@ -46,5 +12,16 @@ class CharacterStore extends ChangeNotifier {
 
     _characters.add(character);
     notifyListeners();
+  }
+
+  void fetchCharacterOnce() async {
+    if (characters.isEmpty) {
+      final snapshot = await FirestoreService.getCharacterOnce();
+
+      for (var doc in snapshot.docs) {
+        _characters.add(doc.data());
+      }
+      notifyListeners();
+    }
   }
 }
