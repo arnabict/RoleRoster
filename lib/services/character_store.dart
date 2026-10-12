@@ -29,4 +29,11 @@ class CharacterStore extends ChangeNotifier {
     await FirestoreService.updateCharacter(character);
     return;
   }
+
+  void removeCharacter(Character character) async {
+    await FirestoreService.deleteCharacter(character);
+
+    _characters.remove(character);
+    notifyListeners();
+  }
 }
