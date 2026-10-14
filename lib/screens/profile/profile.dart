@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:model_rpg/models/character.dart';
+import 'package:model_rpg/screens/profile/heart.dart';
 import 'package:model_rpg/screens/profile/skill_list.dart';
 import 'package:model_rpg/screens/profile/stats_table.dart';
 import 'package:model_rpg/services/character_store.dart';
@@ -46,6 +47,7 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
+            Heart(character: character),
             SizedBox(height: 20),
             Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
             Padding(
